@@ -24,6 +24,16 @@ helm:
           paths:
             - path: /
               pathType: ImplementationSpecific
+    persistence:
+      worker:
+        enabled: true
+        size: 20Gi
+        storageClass: "harvester"
+      logs:
+        # Container based log search and analytics stack recommended
+        enabled: false
+        size: 20Gi
+        storageClass: "harvester"
   correctDrift:
     enabled: true
     force: true
